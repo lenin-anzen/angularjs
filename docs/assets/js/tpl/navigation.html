@@ -1,0 +1,66 @@
+<div ng-controller="NavigationController as nav">
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id='left'
+        md-is-locked-open="false"
+        md-whiteframe="4">
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Menú</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+            <md-list flex>
+                <md-list-item ui-sref="home" ui-sref-active="active">
+                    <md-icon class="material-icons">home</md-icon>
+                    <p>Inicio</p>
+                </md-list-item>
+                <md-list-item ui-sref="monitors" ui-sref-active="active">
+                    <md-icon class="material-icons">router</md-icon>
+                    <p>Monitores</p>
+                </md-list-item>
+                <md-list-item ui-sref="users" ui-sref-active="active">
+                    <md-icon class="material-icons">account_box</md-icon>
+                    <p>Usuarios</p>
+                </md-list-item>
+                <md-list-item ui-sref="measures" ui-sref-active="active">
+                    <md-icon class="material-icons">timeline</md-icon>
+                    <p>Mediciones</p>
+                </md-list-item>
+                <md-subheader class="md-no-sticky">Catálogos</md-subheader>
+                <md-list-item ui-sref="monitor-categories" ui-sref-active="active">
+                    <md-icon class="material-icons">list</md-icon>
+                    <p>Categorías de monitores</p>
+                </md-list-item>
+                <md-list-item ui-sref="user-categories" ui-sref-active="active">
+                    <md-icon class="material-icons">list</md-icon>
+                    <p>Categorías de usuarios</p>
+                </md-list-item>
+                <md-list-item ui-sref="channels" ui-sref-active="active">
+                    <md-icon class="material-icons">list</md-icon>
+                    <p>Canales</p>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <md-button 
+                ng-click="nav.open()" 
+                class="md-icon-button" 
+                aria-label="Menu" 
+                ng-disabled="false">
+                <md-icon class="material-icons md-light md-48">menu</md-icon>
+            </md-button>
+
+            <h2 flex md-truncate>Monitores</h2>
+
+            <md-button 
+                ng-click="nav.logout()" 
+                class="md-icon-button" 
+                aria-label="Salir" 
+                ng-disabled="false">
+                <md-icon class="material-icons md-light md-48">exit_to_app</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+</div>

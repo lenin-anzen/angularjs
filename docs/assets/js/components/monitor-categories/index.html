@@ -1,0 +1,35 @@
+<div ng-include="'assets/js/tpl/navigation.html'"></div>
+<md-toolbar class="md-table-toolbar md-default">
+	<div class="md-toolbar-tools">
+		<span>{{ title }}</span>
+	</div>
+</md-toolbar>
+<md-card style="margin:0px">
+	<md-input-container style="margin:15px;">
+		<label>Buscar</label>
+		<input type="text" ng-model="filterText">
+	</md-input-container>
+</md-card>
+<mdt-table
+	paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"
+	mdt-row-paginator="paginatorCallback(page, pageSize)"
+	mdt-row-paginator-error-message="Ha ocurrido un error al cargar la información."
+	mdt-trigger-request="getLoadResultsCallback(loadPageCallback)"
+	mdt-row="{
+		'table-row-id-key': 'id',
+		'column-keys': [
+			'id',
+			'name',
+			'description',
+			'active',
+			'created_at'
+		]
+	}">
+	<mdt-header-row>
+		<mdt-column align-rule="left" aria-label="ID">ID</mdt-column>
+		<mdt-column align-rule="right" aria-label="Nombre">Nombre</mdt-column>
+		<mdt-column align-rule="right" aria-label="Descripción">Descripción</mdt-column>
+		<mdt-column align-rule="right" aria-label="Estatus">Estatus</mdt-column>
+		<mdt-column align-rule="right" aria-label="Creado el">Creado el</mdt-column>
+	</mdt-header-row>
+</mdt-table>

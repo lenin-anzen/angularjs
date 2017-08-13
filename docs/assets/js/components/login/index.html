@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col m6 offset-m3">
+        <md-content layout="row" layout-align="space-around" layout-padding="layout-padding" class="md-no-momentum login-form">
+            <md-card flex="flex" flex="100" flex-sm="100" flex-gt-sm="100" flex-gt-md="90" flex-gt-lg="50">
+                <md-toolbar>
+                    <div class="md-toolbar-tools">
+                        <h2><span>{{ vm.title }}</span></h2>
+                    </div>
+                </md-toolbar>
+                <md-card-content>
+                    <form name="Form" role="form" ng-submit="Form.$valid && vm.submitForm()" novalidate>
+                        <md-input-container class="md-block">
+                            <div class="input-field col s12 m12">
+                                <label for="email">Email:</label>
+                                <i class="material-icons prefix">perm_identity</i>
+                                <input id="email" type="email" name="email" ng-model="vm.formData.email" placeholder="Ingrese su email" required/>
+                                <div ng-messages="Form.email.$error" role="alert" md-auto-hide="false" multiple>
+                                    <div ng-message="email">
+                                        Por favor ingresa un email válido.
+                                    </div>
+                                    <div ng-message="required">
+                                        Por favor ingresa tu email.
+                                    </div>
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <div class="input-field col s12 m12">
+                                <label for="password">Contraseña:</label>
+                                <i class="material-icons prefix">lock_outline</i>
+                                <input id="password" type="password" name="password" ng-model="vm.formData.password" placeholder="Ingrese su contraseña" required md-maxlength="16"/>
+                                <div ng-messages="Form.password.$error" role="alert" md-auto-hide="false" multiple>
+                                    <div ng-message="required">Por favor ingresa tu contraseña.</div>
+                                    <div ng-message="md-maxlength">Demasiado grande.</div>
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <md-button 
+                            ng-disabled="!Form.$valid" 
+                            type="submit" 
+                            class="md-raised md-primary">Ingresar &nbsp; <md-icon class="material-icons">input</md-icon></md-button>
+                        <md-button 
+                            ng-disabled="true" 
+                            class="md-raised md-warn">Recuperar contraseña &nbsp; <md-icon class="material-icons">help_outline</md-icon></md-button>
+                    </form>
+                </md-card-content>
+            </md-card>
+        </md-content>
+    </div>
+</div>

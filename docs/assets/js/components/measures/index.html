@@ -1,0 +1,43 @@
+<div ng-include="'assets/js/tpl/navigation.html'"></div>
+<md-toolbar class="md-table-toolbar md-default">
+	<div class="md-toolbar-tools">
+		<span>{{ title }}</span>
+	</div>
+</md-toolbar>
+<md-card style="margin:0px">
+	<md-input-container style="margin:15px;">
+		<label>Buscar</label>
+		<input type="text" ng-model="filterText">
+	</md-input-container>
+</md-card>
+<mdt-table
+	paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"
+	mdt-row-paginator="paginatorCallback(page, pageSize)"
+	mdt-row-paginator-error-message="Ha ocurrido un error al cargar la información."
+	mdt-trigger-request="getLoadResultsCallback(loadPageCallback)"
+	mdt-row="{
+		'table-row-id-key': 'id',
+		'column-keys': [
+			'id',
+			'monitor_id',
+			'ch1',
+			'ch2',
+			'ch3',
+			'ch4',
+			'ch5',
+			'ch6',
+			'created_at'
+		]
+	}">
+	<mdt-header-row>
+		<mdt-column align-rule="left" aria-label="ID">ID</mdt-column>
+		<mdt-column align-rule="right" aria-label="monitor_id">monitor_id</mdt-column>
+		<mdt-column align-rule="right" aria-label="ch1">ch1</mdt-column>
+		<mdt-column align-rule="right" aria-label="ch2">ch2</mdt-column>
+		<mdt-column align-rule="right" aria-label="ch3">ch3</mdt-column>
+		<mdt-column align-rule="right" aria-label="ch4">ch4</mdt-column>
+		<mdt-column align-rule="right" aria-label="ch5">ch5</mdt-column>
+		<mdt-column align-rule="right" aria-label="ch6">ch6</mdt-column>
+		<mdt-column align-rule="right" aria-label="Creado el">Creado el</mdt-column>
+	</mdt-header-row>
+</mdt-table>
